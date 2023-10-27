@@ -1,0 +1,27 @@
+{
+  "name": "conversant-bot",
+  "version": "1.0.0",
+  "description": "bleep bloop a bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camelPhonso/conversant-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/camelPhonso/conversant-bot/issues"
+  },
+  "homepage": "https://github.com/camelPhonso/conversant-bot#readme",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "discord.js": "^14.13.0",
+    "dotenv": "^16.3.1",
+    "latest": "^0.2.0",
+    "n": "^9.2.0",
+    "openai": "^4.14.1"
+  }
+}
