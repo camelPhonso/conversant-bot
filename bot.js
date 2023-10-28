@@ -18,7 +18,10 @@ const client = new Client({
 // log into discord
 client.login(process.env.BOT_TOKEN)
 client.on("ready", () => {
-  console.log("Diane is on the line")
+  console.log(
+    "\033[32:1m",
+    "The bot is online. Call it 'Diane' to get a response."
+  )
 })
 
 // process messages when sent
@@ -36,18 +39,17 @@ client.on("messageCreate", async message => {
 
     await message.channel.sendTyping()
 
-    // check the last 10 messages and log them into the conversation if they are not from the same user
-    // ignore messages from bots
+    // ignore messages from other bots and different users
+    // check the last 10 messages and log them into the conversation
     let previousMessages = await message.channel.messages.fetch({ limit: 10 })
     previousMessages.reverse().forEach(entry => {
       if (entry.author.id !== client.user.id && message.author.bot) return
       if (entry.author.id !== message.author.id) return
-      if (message.content.startsWith("diane")) {
-        conversation.push({
-          role: "user",
-          content: entry.content,
-        })
-      }
+      
+      conversation.push({
+        role: "user",
+        content: entry.content,
+      })
     })
 
     // get response from openAI and reply to user
