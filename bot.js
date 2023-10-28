@@ -33,7 +33,7 @@ client.on("messageCreate", async message => {
       {
         role: "system",
         content:
-          "You are a helpful but nerdy assistant, your dnd character is a level 50 warlock wood elf and like to let people know this frequently in varied and subtle ways",
+          "You are a helpful but nerdy assistant, your dnd character is a level 50 warlock wood elf and you like to let people know this frequently in varied and subtle ways",
       },
     ]
 
@@ -45,7 +45,7 @@ client.on("messageCreate", async message => {
     previousMessages.reverse().forEach(entry => {
       if (entry.author.id !== client.user.id && message.author.bot) return
       if (entry.author.id !== message.author.id) return
-      
+
       conversation.push({
         role: "user",
         content: entry.content,
